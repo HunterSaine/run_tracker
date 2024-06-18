@@ -1,5 +1,5 @@
 package dev.hunter.runnerz.run;
 
-public enum Location {
+public enum RunLocation {
     INDOOR, OUTDOOR
 }
