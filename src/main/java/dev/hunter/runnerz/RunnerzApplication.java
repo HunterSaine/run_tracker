@@ -19,18 +19,18 @@ public class RunnerzApplication {
         SpringApplication.run(RunnerzApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner() {
-        return args -> {
-            Run run = new Run(1,
-                    "first run",
-                    LocalDateTime.now(),
-                    LocalDateTime.now().plus(1, ChronoUnit.HOURS),
-                    1,
-                    RunLocation.INDOOR
-            );
-            log.info("Run: " + run);
-        };
-    }
+//    @Bean
+//    CommandLineRunner runner() {
+//        return args -> {
+//            Run run = new Run(1,
+//                    "first run",
+//                    LocalDateTime.now(),
+//                    LocalDateTime.now().plus(1, ChronoUnit.HOURS),
+//                    1,
+//                    RunLocation.INDOOR
+//            );
+//            log.info("Run: " + run);
+//        };
+//    }
 
 }
