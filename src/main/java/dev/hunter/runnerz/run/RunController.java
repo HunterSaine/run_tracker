@@ -1,8 +1,6 @@
 package dev.hunter.runnerz.run;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,5 +21,17 @@ public class RunController {
     @GetMapping("/runs/{id}")
     Optional<Run> findByRunId(@PathVariable Integer id){
         return runRepository.findByRunId(id);
+    }
+    @PostMapping("/runs")
+    void newRun(@RequestBody Run run){
+        runRepository.create(run);
+    }
+    @PutMapping("/runs/{id}")
+    void updateRun(@RequestBody Run run,@PathVariable Integer id){
+        runRepository.update(run,id);
+    }
+    @DeleteMapping("/runs/delete/{id}")
+    void deleteRun(@RequestBody @PathVariable Integer id){
+        runRepository.delete(id);
     }
 }
