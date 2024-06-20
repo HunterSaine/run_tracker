@@ -22,7 +22,7 @@ public class RunnerzApplication {
 //    @Bean
 //    CommandLineRunner runner() {
 //        return args -> {
-//            Run run = new Run(1,
+//            Run run = new Run(3,
 //                    "first run",
 //                    LocalDateTime.now(),
 //                    LocalDateTime.now().plus(1, ChronoUnit.HOURS),
