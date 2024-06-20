@@ -8,16 +8,16 @@ import java.util.Optional;
 @RestController
 public class RunController {
 
-//    private final RunRepository runRepository;
-//
-//    public RunController(RunRepository runRepository) {
-//        this.runRepository = runRepository;
-//    }
-//
-//    @GetMapping("/runs")
-//    List<Run> findAll(){
-//        return runRepository.findAll();
-//    }
+    private final RunRepository runRepository;
+
+    public RunController(RunRepository runRepository) {
+        this.runRepository = runRepository;
+    }
+
+    @GetMapping("/runs")
+    List<Run> findAll(){
+        return runRepository.findAll();
+    }
 //    @GetMapping("/runs/{id}")
 //    Optional<Run> findByRunId(@PathVariable Integer id){
 //        return runRepository.findByRunId(id);
