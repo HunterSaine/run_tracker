@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 public record Run(
         Integer id,
         String title,
-        LocalDateTime startTime,
-        LocalDateTime endTime,
+        LocalDateTime startedOn,
+        LocalDateTime completedOn,
         Integer miles,
         RunLocation location
 ) {

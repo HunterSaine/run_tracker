@@ -25,5 +25,11 @@ public class RunRepository {
                 .query(Run.class)
                 .list();
     }
+    public Optional<Run> findById(Integer id) {
+        return jdbcClient.sql("SELECT id,title,started_on,completed_on,miles,location FROM Run WHERE id = :id" )
+                .param("id", id)
+                .query(Run.class)
+                .optional();
+    }
 
 }
