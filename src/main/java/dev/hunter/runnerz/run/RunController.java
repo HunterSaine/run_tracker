@@ -28,16 +28,23 @@ public class RunController {
         }
         return run.get();
     }
-//    @PostMapping("/runs")
-//    void newRun(@RequestBody Run run){
-//        runRepository.create(run);
-//    }
-//    @PutMapping("/runs/{id}")
-//    void updateRun(@RequestBody Run run,@PathVariable Integer id){
-//        runRepository.update(run,id);
-//    }
-//    @DeleteMapping("/runs/delete/{id}")
-//    void deleteRun(@RequestBody @PathVariable Integer id){
-//        runRepository.delete(id);
-//    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/runs")
+    void newRun(@RequestBody Run run){
+        runRepository.create(run);
+    }
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/runs/update/{id}")
+    void update(@RequestBody Run run,@PathVariable Integer id){
+        runRepository.update(run,id);
+    }
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/runs/delete/{id}")
+    void deleteRun(@RequestBody @PathVariable Integer id){
+        runRepository.delete(id);
+    }
+    @GetMapping("/runs")
+    List<Run> findByLocation(@RequestParam String location){
+        return runRepository.findByLocation(location);
+    }
 }
